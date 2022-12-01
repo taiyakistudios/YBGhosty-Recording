@@ -1,0 +1,41 @@
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    if: github.repository != 'taiyakistudios/new-project-template'
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v3 
+      with: 
+        token: ${{secrets.PERSONAL}}
+    - name: Commit files
+      env: 
+        continue-on-error: true
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git clone https://${{ secrets.PERSONAL }}@github.com/taiyakistudios/template-character-repo.git
+        rm -rf template-character-repo/.git 
+        rm -rf .github
+        mv template-character-repo/{.[!.],}*  .
+        rm -rf template-character-repo
+        git add .
+        git commit -am "Initial project setup commit" || true
+    - name: Push changes
+      run: |
+          git remote set-url origin https://${{ secrets.PERSONAL }}@github.com/$GITHUB_REPOSITORY.git
+          echo Hello, world!
+          git push https://${{ secrets.PERSONAL }}@github.com/$GITHUB_REPOSITORY.git  $GITHUB_REF_NAME
+          
