@@ -1,0 +1,88 @@
+{
+	"FileVersion": 3,
+	"Version": 3,
+	"VersionName": "3.0.2",
+	"FriendlyName": "DragonFly",
+	"Description": "Professional virtual camera tool-set that gives a window into your virtual world",
+	"Category": "Glassbox",
+	"CreatedBy": "Glassbox Technologies",
+	"CreatedByURL": "https://glassboxtech.com/products/dragonfly",
+	"DocsURL": "https://glassboxtech.com/products/dragonfly#downloads",
+	"MarketplaceURL": "",
+	"SupportURL": "https://glassboxtech.com/support",
+	"EngineVersion": "5.0.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "DragonFlyRuntime",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "DragonFly",
+			"Type": "UncookedOnly",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "NDIIOShaders",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ConcertMain",
+			"Enabled": true
+		},
+		{
+			"Name": "ConcertSyncCore",
+			"Enabled": true
+		},
+		{
+			"Name": "ConcertSyncClient",
+			"Enabled": true
+		},
+		{
+			"Name": "MultiUserClient",
+			"Enabled": true
+		},
+		{
+			"Name": "LevelSequenceEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "MediaFrameworkUtilities",
+			"Enabled": true
+		},
+		{
+			"Name": "MediaIOFramework",
+			"Enabled": true
+		},
+		{
+			"Name": "BlackmagicMedia",
+			"Enabled": true
+		},
+		{
+			"Name": "AjaMedia",
+			"Enabled": true
+		},
+		{
+			"Name": "LiveLink",
+			"Enabled": true
+		},
+		{
+			"Name": "Composure",
+			"Enabled": true
+		}
+	]
+}

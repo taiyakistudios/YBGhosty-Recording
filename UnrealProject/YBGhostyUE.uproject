@@ -45,10 +45,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "VirtualCamera",
-			"Enabled": true
-		},
-		{
 			"Name": "LiveLink",
 			"Enabled": true
 		},
@@ -158,6 +154,14 @@
 		{
 			"Name": "RigLogic",
 			"Enabled": true
+		},
+		{
+			"Name": "LiveLinkCamera",
+			"Enabled": true
+		},
+		{
+			"Name": "DragonFly",
+			"Enabled": false
 		}
 	]
 }
